@@ -8,6 +8,8 @@ function setup() {
 
 function draw() {
   background(0);
+  noStroke();
+  fill("#edafb8");
   p.draw();
   
   
@@ -15,12 +17,12 @@ function draw() {
 
 class Particle //serves a model to create objects
     {
-      constructor (x,y)
+      constructor (x,y) //blueprint to create objects
       {
         this.x = x;
         this.y = y;
-        this.vx = random (-2,2);
-        this.vy = random (-2,2);
+        this.vx = random (-2,2); //velocity in x direction
+        this.vy = random (-2,2); //velocity in y direction
         
       }
       
@@ -28,6 +30,12 @@ class Particle //serves a model to create objects
       {
         this.x = this.x + this.vx;
         this.y = this.y + this.vy;
+
+        if (this.x<0 || this.x>width || this.y < 0 || this.y>height){
+          this.x = random(0,width);
+          this.y = random(0,height);
+        } 
+
         circle(this.x,this.y,5);
       }
     }
