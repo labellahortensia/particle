@@ -6,7 +6,7 @@ let p = Array(nb);
 function setup() {
   createCanvas(500, 500);
   for (let i=0; i<nb; i=i+1){
-  p[i] = new Particle(random(0,with),random(0,height)); //creates an object + original position
+  p[i] = new Particle(random(0,width),random(0,height)); //creates an object + original position
   }
 }
 
