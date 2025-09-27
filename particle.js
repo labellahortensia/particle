@@ -1,17 +1,21 @@
-let p;
+let p = Array(6);
 
 
 function setup() {
   createCanvas(500, 500);
-  p = new Particle(250,250);
+  for (let i=0; i<6; i=i+1){
+  p[i] = new Particle(250,250); //creates an object + original position
+  }
 }
 
 function draw() {
   background(0);
   noStroke();
   fill("#edafb8");
-  p.draw();
-  
+  for (let i=0; i<6; i=i+1)
+    {
+    p[i].draw();
+    }
   
 }
 
