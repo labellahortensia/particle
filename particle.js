@@ -1,6 +1,6 @@
 let nb = 50;
 let dMin = 100;
-let p = Array(6);
+let p = Array(nb);
 
 
 function setup() {
@@ -16,7 +16,7 @@ function draw() {
   fill("#edafb8");
   for (let i=0; i<nb; i=i+1)
     {
-    p[i].draw();
+      p[i].draw();
     }
 
     stroke(255);
