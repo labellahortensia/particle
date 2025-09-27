@@ -1,10 +1,12 @@
-let p = Array(6);
+let nb = 50;
+let dMin = 100;
+let p = Array(nb);
 
 
 function setup() {
   createCanvas(500, 500);
-  for (let i=0; i<6; i=i+1){
-  p[i] = new Particle(250,250); //creates an object + original position
+  for (let i=0; i<nb; i=i+1){
+  p[i] = new Particle(random(0,width),random(0,height)); //creates an object + original position
   }
 }
 
@@ -12,9 +14,21 @@ function draw() {
   background(0);
   noStroke();
   fill("#edafb8");
-  for (let i=0; i<6; i=i+1)
+  for (let i=0; i<nb; i=i+1)
     {
-    p[i].draw();
+      p[i].draw();
+    }
+
+    stroke(255);
+    for (let i=0; i<nb; i=i+1){
+      let pi = p[i];
+      for (let j=i+1; j<nb; j=j+1){
+          let pj = p[j];
+          let d = dist(pi.x,pi.y,pj.x,pj.y);
+          if (d<dMin){
+            line(pi.x,pi.y,pj.x,pj.y);
+          }
+        }
     }
   
 }
