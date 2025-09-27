@@ -1,5 +1,5 @@
-let nb = 50;
-let dMin = 100;
+let nb = 150;
+let dMin = 50;
 let p = Array(nb);
 
 
